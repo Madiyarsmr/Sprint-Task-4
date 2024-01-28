@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<table cellpadding="10">
+    <tr>
+        <td>NAME</td>
+        <td>
+            <input type="" id="name">
+        </td>
+    </tr>
+    <tr>
+        <td>SURNAME</td>
+        <td>
+            <input type="" id="surname">
+        </td>
+    </tr>
+    <tr>
+        <td>COUNTRY</td>
+        <td>
+            <select id="country">
+                <option value="Kazakhstan">Kazakhstan</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Russia">Russia</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>PHONE NUMBER</td>
+        <td>
+            <input type="" id="phoneNumber">
+        </td>
+    </tr>
+</table>
+<div style="margin-left: 10px">
+        <span>
+            <button>SUBMIT</button>
+        </span>
+    <span style="margin-left: 5px">
+            <button onclick="saveToDraft()">SAVE TO DRAFT</button>
+        </span>
+</div>
+
+<script>
+    function saveToDraft() {
+        let name = document.getElementById("name").value;
+        let surname = document.getElementById("surname").value;
+        let country = document.getElementById("country").value;
+        let phoneNumber = document.getElementById("phoneNumber").value;
+
+        localStorage.setItem('keyName',name);
+        localStorage.setItem('keySurname',surname);
+        localStorage.setItem('keyCountry',country);
+        localStorage.setItem('keyPhoneNumber',phoneNumber);
+    }
+
+    document.getElementById("name").value = localStorage.getItem('keyName');
+    document.getElementById("surname").value = localStorage.getItem('keySurname');
+    document.getElementById("country").value = localStorage.getItem('keyCountry');
+    document.getElementById("phoneNumber").value = localStorage.getItem('keyPhoneNumber');
+
+</script>
+</body>
+</html>
